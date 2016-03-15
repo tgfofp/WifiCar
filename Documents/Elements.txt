@@ -1,0 +1,10 @@
+2 DC motors - http://www.seeedstudio.com/depot/Gear-Motor-6V-60rpm-Dustproof-p-714.html
+2 редуктора 
+2 гуми - http://cart.payments.ebay.com/sc/add?ssPageName=CART:ATC&item=iid:400985432465,qty:4
+2 моста - http://www.ebay.co.uk/itm/1-5-L293D-L293-L293B-DIP-SOP-Push-Pull-Four-Channel-Stepper-Motor-Driver-IC-Chip-/351090679077?var=&hash=item51bea29d25:m:m_Ko3rpbgxEgcClf-DoSROQ
+1 контролер - beaglebone
+1 регулатор/стабилизатор на U  - 5V/3.3V
+n батерии - 6 V / 
+1 Wifi - http://www.seeedstudio.com/depot/ESP8266-based-WiFi-module-SPI-supported-p-2486.html
+http://www.seeedstudio.com/depot/WiFi-Serial-Transceiver-Module-w-ESP8266-1MB-Flash-p-2485.html
+n пасивни елементи - to get
