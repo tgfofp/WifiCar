@@ -1,0 +1,1058 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0093)https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Wi Fi Module ESP8266 – 3. Connect to Android Mobile | alselectro</title>
+<link rel="pingback" href="https://alselectro.wordpress.com/xmlrpc.php">
+
+<!--[if lt IE 7]>
+<link href="https://s0.wp.com/wp-content/themes/pub/motion/ie6.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">var clear="https://s0.wp.com/wp-content/themes/pub/motion/images/clear.gif"; //path to clear.gif</script>
+<script type="text/javascript" src="https://s0.wp.com/wp-content/themes/pub/motion/js/unitpngfix.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="alselectro » Feed" href="https://alselectro.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="alselectro » Comments Feed" href="https://alselectro.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="alselectro » Wi Fi Module ESP8266 – 3. Connect to Android Mobile Comments Feed" href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel="stylesheet" id="all-css-0" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(2)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://alselectro.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="WiFi Module ESP8266 – 2. TCP CLIENT /Server mode" href="https://alselectro.wordpress.com/2015/05/13/wifi-module-esp8266-2-tcp-client-server-mode/">
+<link rel="next" title="Wi Fi Module ESP8266 – 4.Control from anywhere in the World–Internet of Things" href="https://alselectro.wordpress.com/2015/05/31/wi-fi-module-esp8266-4-control-from-anywhere-in-the-worldinternet-of-things/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+<link rel="shortlink" href="http://wp.me/p1DczD-NK">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Falselectro.wordpress.com%2F2015%2F05%2F13%2Fwi-fi-module-esp8266-3-connect-to-android-mobile%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Falselectro.wordpress.com%2F2015%2F05%2F13%2Fwi-fi-module-esp8266-3-connect-to-android-mobile%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wi Fi Module ESP8266 – 3. Connect to Android Mobile">
+<meta property="og:url" content="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+<meta property="og:description" content="Check out my previous posts on WIFI ESP8266 1.AT COMMANDS  ,  2. TCP CLIENT/SERVER In this post we shall see how to connect ESP module with an ANDROID Mobile device &amp; communicate. On …">
+<meta property="article:published_time" content="2015-05-13T03:21:42+00:00">
+<meta property="article:modified_time" content="2015-05-13T03:21:42+00:00">
+<meta property="og:site_name" content="alselectro">
+<meta property="og:image" content="https://alselectro.files.wordpress.com/2015/05/cooltext753793315_thumb2.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="https://alselectro.files.wordpress.com/2015/05/image127_thumb.jpg?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://alselectro.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://alselectro.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://alselectro.wordpress.com/osd.xml" title="alselectro">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="alselectro"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="All about Microcontrollers,Tips on Pc,Android phone,Electronics"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://alselectro.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Wi Fi Module ESP8266 – 3. Connect to Android Mobile | alselectro on WordPress.com">
+<meta name="description" content="Check out my previous posts on WIFI ESP8266 1.AT COMMANDS  ,  2. TCP CLIENT/SERVER In this post we shall see how to connect ESP module with an ANDROID Mobile device &amp; communicate. On ESP side following are the AT commands to configure : AT+CWLAP   -  Lists all surrounding Access Points AT+CWJAP = “SSID”,”password”     - Join…">
+		<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script><script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/bid"></script>
+		<script type="text/javascript">
+		try {
+			var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'alselectro.wordpress.com',
+				pageURL: 'https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		} catch(e) {}
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script><script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/showad.js"></script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("About these ads");
+		});
+		</script><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ga.js"></script>
+<script type="text/javascript" async="" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(3)"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/services.css"><script type="text/javascript" async="" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(4)"></script></head>
+
+<body class="single single-post postid-3084 single-format-standard mp6 customizer-styles-applied highlander-enabled highlander-dark">
+<div id="wrapper">
+
+<div id="top">
+	<div id="topmenu">
+			<ul>
+		<li class="page_item"><a href="https://alselectro.wordpress.com/">Home</a></li>		<li class="page_item page-item-2"><a href="https://alselectro.wordpress.com/about/">About</a></li>
+		<li><a class="rss" href="https://alselectro.wordpress.com/feed/">RSS</a></li>
+	</ul>
+
+	</div>
+
+	<div id="search">
+		<form method="get" id="searchform" action="https://alselectro.wordpress.com/">
+			<p>
+				<input type="text" value="Search this site..." onfocus="if (this.value == &#39;Search this site...&#39; ) { this.value = &#39;&#39;; }" onblur="if (this.value == &#39;&#39; ) { this.value = &#39;Search this site...&#39;; }" name="s" id="searchbox">
+				<input type="submit" class="submitbutton" value="GO">
+			</p>
+		</form>
+	</div>
+</div><!-- /top -->
+
+<div id="header">
+	<div id="logo">
+		<a href="https://alselectro.wordpress.com/"><img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/genericlogo.png" alt="alselectro"></a>
+		<h1><a href="https://alselectro.wordpress.com/">alselectro</a></h1>
+		<div id="desc">All about Microcontrollers,Tips on Pc,Android phone,Electronics</div>
+	</div><!-- /logo -->
+
+		<div id="headerbanner">
+		<p>Hey there! Thanks for dropping by alselectro! Take a look around and grab the <a href="https://alselectro.wordpress.com/feed/">RSS feed</a> to stay updated. See you around!</p>
+	</div>
+	</div><!-- /header -->
+
+<div id="catnav">
+	<ul id="nav">
+			<li class="cat-item cat-item-320214"><a href="https://alselectro.wordpress.com/category/8051/">8051</a>
+</li>
+	<li class="cat-item cat-item-134289"><a href="https://alselectro.wordpress.com/category/arduino/">ARDUINO</a>
+</li>
+	<li class="cat-item cat-item-31280184"><a href="https://alselectro.wordpress.com/category/bluetoothwifi/">BlueTooth/WIFI</a>
+</li>
+	<li class="cat-item cat-item-54253"><a href="https://alselectro.wordpress.com/category/cctv/">CCTV</a>
+</li>
+	<li class="cat-item cat-item-7334"><a href="https://alselectro.wordpress.com/category/electronics/">Electronics</a>
+</li>
+	<li class="cat-item cat-item-72646117"><a href="https://alselectro.wordpress.com/category/friendly-arm-mini2440/">Friendly ARM Mini2440</a>
+</li>
+	<li class="cat-item cat-item-3169"><a href="https://alselectro.wordpress.com/category/gps/">GPS</a>
+</li>
+	<li class="cat-item cat-item-44126"><a href="https://alselectro.wordpress.com/category/gsm/">GSM</a>
+</li>
+	<li class="cat-item cat-item-6082830"><a href="https://alselectro.wordpress.com/category/gsmgps/">GSM,GPS</a>
+</li>
+	<li class="cat-item cat-item-139916"><a href="https://alselectro.wordpress.com/category/microcontrollers/">MicroControllers</a>
+<ul class="children">
+	<li class="cat-item cat-item-46557181"><a href="https://alselectro.wordpress.com/category/microcontrollers/avr-microcontrollers/">AVR Microcontrollers</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-957901"><a href="https://alselectro.wordpress.com/category/pic-microcontroller/">PIC MicroController</a>
+<ul class="children">
+	<li class="cat-item cat-item-315560043"><a href="https://alselectro.wordpress.com/category/pic-microcontroller/pic16f877a-mplabx-with-xc8/">PIC16F877A – MPLABX with XC8</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-10970481"><a href="https://alselectro.wordpress.com/category/quadcopter/">QUADCOPTER</a>
+</li>
+	<li class="cat-item cat-item-49695267"><a href="https://alselectro.wordpress.com/category/raspberry-pi/">Raspberry PI</a>
+</li>
+	<li class="cat-item cat-item-13426"><a href="https://alselectro.wordpress.com/category/robotics/">Robotics</a>
+</li>
+	<li class="cat-item cat-item-17487"><a href="https://alselectro.wordpress.com/category/ubuntu-linux/">Ubuntu Linux</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://alselectro.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-800"><a href="https://alselectro.wordpress.com/category/windows/">Windows</a>
+</li>
+	<li class="cat-item cat-item-112190286"><a href="https://alselectro.wordpress.com/category/xbee-radios/">XBEE Radios</a>
+</li>
+	</ul>
+</div><!-- /catnav -->
+
+<div id="main">
+
+	<div id="content">
+
+		
+		
+				<div class="post post-3084 type-post status-publish format-standard hentry category-uncategorized" id="post-3084">
+		
+			<div class="posttop">
+										<h2 class="posttitle">Wi Fi Module ESP8266 – 3. Connect to Android&nbsp;Mobile</h2>
+								<div class="postmetatop">
+										<div class="categs">
+						Filed under: <a href="https://alselectro.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a> — <a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#comments">1 Comment</a>					</div>
+					<div class="date"><span>May 13, 2015</span></div>
+				</div>
+			</div>
+
+			<div class="postcontent">
+				<p>Check out my previous posts on WIFI ESP8266 <a href="https://alselectro.wordpress.com/2015/05/05/wifi-module-esp8266-1-getting-started-with-at-commands/" target="_blank">1.AT COMMANDS</a>&nbsp; ,&nbsp; <a href="https://alselectro.wordpress.com/2015/05/13/wifi-module-esp8266-2-tcp-client-server-mode/" target="_blank">2. TCP CLIENT/SERVER</a></p>
+<p>In this post we shall see how to connect ESP module with an ANDROID Mobile device &amp; communicate.</p>
+<p>On ESP side following are the AT commands to configure :</p>
+<p><strong><font size="4">AT+CWLAP</font></strong>&nbsp;&nbsp; -&nbsp; Lists all surrounding Access Points</p>
+<p><strong><font size="4">AT+CWJAP = “SSID”,”password”</font></strong>&nbsp;&nbsp;&nbsp;&nbsp; – Join with your preferred AP</p>
+<p><font size="4"><strong>AT+CWMODE=1</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ESP on STATION Mode</p>
+<p><strong><font size="4">AT+CIPMUX=1</font></strong>&nbsp;&nbsp;&nbsp;&nbsp; Allow multiple connections</p>
+<p><strong><font size="4">AT+CIPSERVER=1,80</font></strong>&nbsp;&nbsp; start the SERVER on port 80</p>
+<p><strong><font size="4">AT+CIFSR</font></strong>&nbsp;&nbsp;&nbsp; to get the STATION IP Address</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/image127.jpg"><img title="Image127" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="Image127" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/image127_thumb.jpg" width="568" height="372"></a></p>
+<p>On your Android Mobile open SETTINGS &amp; switch ON WI FI</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00139.jpg"><img title="DSC00139" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00139" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00139_thumb.jpg" width="532" height="319"></a></p>
+<p>&nbsp;</p>
+<p>Surrounding Access Points will be listed automatically.Select the one to which the ESP module has joined <span class="skimlinks-unlinked">already.Here</span> it is MBLAZE , which is a secured one.</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00140.jpg"><img title="DSC00140" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00140" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00140_thumb.jpg" width="511" height="316"></a></p>
+<p>&nbsp;</p>
+<p>Open the preferred WIFI access point &amp; connect to it by providing the Password.</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00143.jpg"><img title="DSC00143" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00143" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00143_thumb.jpg" width="538" height="355"></a></p>
+<p>Now , my Mobile has connected to the Access point where ESP is already connected with.</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00145.jpg"><img title="DSC00145" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00145" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00145_thumb.jpg" width="549" height="268"></a></p>
+<p>&nbsp;</p>
+<p>From the Market , install a TELNET client on your Mobile</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/image118.jpg"><img title="Image118" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="Image118" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/image118_thumb.jpg" width="531" height="343"></a></p>
+<p>&nbsp;</p>
+<p>Open the TELNET Client </p>
+<p>TELNET waits to get the Local Host IP &amp; the Port number.</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00149.jpg"><img title="DSC00149" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00149" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00149_thumb.jpg" width="557" height="333"></a></p>
+<p>&nbsp;</p>
+<p>Enter the IP as 192.168.1.2 &amp; Port as 80&nbsp; .</p>
+<p>This IP is the one we got from AT+CIFSR previously &amp; we’ve started a Server on port 80 already with ESP.</p>
+<p>Touch on Connect to Server</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00150.jpg"><img title="DSC00150" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00150" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00150_thumb.jpg" width="558" height="371"></a></p>
+<p>Now the TELNET Client is connected to the ESP server on port 80.</p>
+<p>Type in some characters &amp; touch Enter </p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00153.jpg"><img title="DSC00153" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00153" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00153_thumb.jpg" width="565" height="358"></a></p>
+<p>&nbsp;</p>
+<p>The characters are received by the ESP Module</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/image125.jpg"><img title="Image125" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="Image125" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/image125_thumb.jpg" width="622" height="410"></a></p>
+<p>&nbsp;</p>
+<p>To send data to TELNET ,use the AT command</p>
+<p><strong><font size="4">AT+CIPSEND=0,15</font></strong></p>
+<p>This command is to send 15 characters on channel 0</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/image126.jpg"><img title="Image126" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="Image126" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/image126_thumb.jpg" width="581" height="364"></a></p>
+<p>&nbsp;</p>
+<p>The message is received by the TELNET screen.</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/dsc00156.jpg"><img title="DSC00156" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="DSC00156" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/dsc00156_thumb.jpg" width="590" height="261"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="https://alselectro.files.wordpress.com/2015/05/cooltext7537933152.png"><img title="cooltext753793315" style="border-top:0;border-right:0;background-image:none;border-bottom:0;padding-top:0;padding-left:0;border-left:0;display:inline;padding-right:0;" border="0" alt="cooltext753793315" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/cooltext753793315_thumb2.png" width="403" height="125"></a></p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+				<div class="u">
+					<script type="text/javascript">
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script><div id="automattic-id-8207" data-section="26942" style="width:300px; height:250px;"><iframe width="300" height="250" style="border:none;width:300px;height:250px;" frameborder="0" scrolling="no" name="fif_slot_automattic-id-_automattic-id-8207" id="fif_slot_automattic-id-_automattic-id-8207" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent;margin:0%;&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sharedaddy-dark sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-3084" class="share-twitter sd-button share-icon" href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-3084" class="share-facebook sd-button share-icon" href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/?share=facebook&amp;nb=1" target="_blank" title="Share on Facebook"><span>Facebook<span class="share-count">1</span></span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-24119465-3084-56fac2e602001" data-src="//widgets.wp.com/likes/#blog_id=24119465&amp;post_id=3084&amp;origin=alselectro.wordpress.com&amp;obj_id=24119465-3084-56fac2e602001" data-name="like-post-frame-24119465-3084-56fac2e602001"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-24119465-3084-56fac2e602001" height="55px" width="100%" frameborder="0" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="3158" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://alselectro.wordpress.com/2015/05/31/wi-fi-module-esp8266-4-control-from-anywhere-in-the-worldinternet-of-things/" title="Wi Fi Module ESP8266 &amp;ndash; 4.Control from anywhere in the World&amp;ndash;Internet of Things
+
+Link to previous posts 1.AT Commands ,&amp;#160; 2. TCP Client/Server&amp;#160; , 3. Connect to Android &amp;#160; In the previous posts we’ve tested the WIFI module in TCP Server/Client mode &amp;amp; how to control from an Android mobile.These are related to LAN – Local Area Network where the WIFI module &amp;amp;…" rel="nofollow" data-origin="3084" data-position="0">Wi Fi Module ESP8266 – 4.Control from anywhere in the World–Internet of Things</a></span><span class="jp-relatedposts-post-context">In "BlueTooth/WIFI"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="3056" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://alselectro.wordpress.com/2015/05/13/wifi-module-esp8266-2-tcp-client-server-mode/" title="WiFi Module ESP8266 &amp;ndash; 2. TCP CLIENT /Server mode
+
+In the previous post we’ve seen how to initiate ESP module &amp;amp; use AT commands.In this post TCP CLIENT mode operation is explained. ESP8266 WIFI module has 3 modes of operation. ST  - Station mode in which ESP acts as a device &amp;amp; connects to an existing Access point. AP…" rel="nofollow" data-origin="3084" data-position="1">WiFi Module ESP8266 – 2. TCP CLIENT /Server mode</a></span><span class="jp-relatedposts-post-context">In "BlueTooth/WIFI"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="3216" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://alselectro.wordpress.com/2015/07/04/port-forwarding-part-2-solution/" title="Port Forwarding&amp;ndash; part 2. Solution
+
+After struggling for nearly a week with MTS dongle , finally I found an excellent solution to enable PORT FORWARDING. HUAWEI POWER FI  E8221 model dongle  is the solution I found.This dongle accepts any data SIM for internet connectivity &amp;amp; we can create a WIFI HOTSPOT with this dongle to…" rel="nofollow" data-origin="3084" data-position="2">Port Forwarding– part 2. Solution</a></span><span class="jp-relatedposts-post-context">In "BlueTooth/WIFI"</span></p></div></div></div>				<div class="linkpages"></div>
+			</div>
+			<small></small>
+
+			<div class="postmetabottom">
+				<div class="tags"></div>
+				<div class="readmore"><a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr> feed</a></div>
+			</div>
+
+		</div><!-- /post -->
+
+		<div id="comments">
+		
+		
+		<div id="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div><!-- /navigation -->
+
+		
+			<h3 id="trackbacktitle">1 Trackback or Pingback for this entry:</h3>
+			<ul class="trackback">
+				<li class="pingback even thread-even depth-1 highlander-comment" id="li-comment-1280">
+	<div id="comment-1280" class="comment-wrap">
+		<div class="commentbody">
+			<div class="author"><a href="https://alselectro.wordpress.com/2015/05/31/wi-fi-module-esp8266-4-control-from-anywhere-in-the-worldinternet-of-things/" rel="external nofollow" class="url">Wi Fi Module ESP8266 – 4.Control from anywhere in the World–Internet of Things | alselectro</a></div>
+						<p>[…] Link to previous posts 1.AT Commands ,&nbsp; 2. TCP Client/Server&nbsp; , 3. Connect to Android […]</p>
+		</div><!-- /commentbody -->
+	</div>
+</li><!-- #comment-## -->
+			</ul>
+		
+		<hr>
+
+
+
+
+				<div id="respond" class="comment-respond js">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="https://alselectro.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="4e54c75bb0"><input type="hidden" name="_wp_http_referer" value="/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 618px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(9).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ad516503a11cd5ca435acc9bb6523536" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your <span class="skimlinks-unlinked">WordPress.com</span> account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="3084" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f46293a26b"></p>
+<input type="hidden" name="genseq" value="1459274470">
+<p style="display: none;"></p>				<input type="hidden" id="ak_js" name="ak_js" value="1459274582301"></form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>		</div><!-- /comments -->
+
+		
+		
+		<div id="navigation">
+			<div class="alignleft">« <a href="https://alselectro.wordpress.com/2015/05/13/wifi-module-esp8266-2-tcp-client-server-mode/" rel="prev">WiFi Module ESP8266 – 2. TCP CLIENT /Server&nbsp;mode</a></div>
+			<div class="alignright"><a href="https://alselectro.wordpress.com/2015/05/31/wi-fi-module-esp8266-4-control-from-anywhere-in-the-worldinternet-of-things/" rel="next">Wi Fi Module ESP8266 – 4.Control from anywhere in the World–Internet of&nbsp;Things</a> »</div>
+		</div><!-- /navigation -->
+
+	</div><!-- /content -->
+
+	
+<div id="sidebar">
+	<ul>
+	<li id="blog_subscription-4" class="boxed widget widget_blog_subscription"><h3 class="widgettitle"><label for="subscribe-field">Follow Blog via Email</label></h3>
+				<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Enter your email address" value="" id="subscribe-field"></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="blog_id" value="24119465">
+						<input type="hidden" name="source" value="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-4">
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="e4a65009eb">						<input type="submit" value="Follow">
+					</p>
+				</form>
+			
+</li>		<li id="recent-posts-4" class="boxed widget widget_recent_entries">		<h3 class="widgettitle">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://alselectro.wordpress.com/2016/02/01/ethernet-shield-for-arduino-a-walkthrough/">Ethernet Shield for Arduino – a&nbsp;walkthrough</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/10/19/gsm-based-control-boards/">GSM BASED CONTROL&nbsp;BOARDS</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/09/23/sim908-gsm-gprs-gps-all-in-one/">SIM908 – GSM ,GPRS &amp; GPS All In&nbsp;One</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/07/28/esp8266-wifi-firmware-upgrading/">ESP8266 WiFi – Firmware&nbsp;Upgrading</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/07/04/port-forwarding-part-2-solution/">Port Forwarding– part 2.&nbsp;Solution</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/07/03/port-forwarding-part-1-tips-troubleshooting/">Port Forwarding– part 1 . Tips &amp;&nbsp;Troubleshooting</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/05/31/wi-fi-module-esp8266-4-control-from-anywhere-in-the-worldinternet-of-things/">Wi Fi Module ESP8266 – 4.Control from anywhere in the World–Internet of&nbsp;Things</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">Wi Fi Module ESP8266 – 3. Connect to Android&nbsp;Mobile</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/05/13/wifi-module-esp8266-2-tcp-client-server-mode/">WiFi Module ESP8266 – 2. TCP CLIENT /Server&nbsp;mode</a>
+						</li>
+					<li>
+				<a href="https://alselectro.wordpress.com/2015/05/05/wifi-module-esp8266-1-getting-started-with-at-commands/">WiFi Module ESP8266 –  1. Getting started with AT&nbsp;commands</a>
+						</li>
+				</ul>
+		</li>		<li id="blog-stats-4" class="boxed widget widget_blog-stats"><h3 class="widgettitle">Blog Stats</h3>		<ul>
+			<li>528,840 hits</li>
+		</ul>
+		</li>	</ul>
+</div><!-- /sidebar -->
+</div><!-- /main -->
+
+
+<div id="footer">
+
+	<div class="foot1">
+		<ul>
+						<li>
+				<h3>Friends &amp; links</h3>
+				<ul>
+				<li><a href="http://en.forums.wordpress.com/">Discuss</a></li>
+<li><a href="http://www.plinky.com/">Get Inspired</a></li>
+<li><a href="http://polldaddy.com/">Get Polling</a></li>
+<li><a href="http://en.support.wordpress.com/">Get Support</a></li>
+<li><a href="http://learn.wordpress.com/">Learn WordPress.com</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+<li><a href="http://en.blog.wordpress.com/">WordPress.com News</a></li>
+				</ul>
+			</li>
+					</ul>
+	</div>
+
+	<div class="foot2">
+		<ul>
+						<li>
+				<h3>Pages</h3>
+				<ul>
+				<li class="page_item page-item-2"><a href="https://alselectro.wordpress.com/about/">About</a></li>
+				</ul>
+			</li>
+					</ul>
+	</div>
+
+	<div class="foot3">
+		<ul>
+						<li>
+				<h3>Monthly archives</h3>
+				<ul>
+					<li><a href="https://alselectro.wordpress.com/2016/02/">February 2016</a></li>
+	<li><a href="https://alselectro.wordpress.com/2015/10/">October 2015</a></li>
+	<li><a href="https://alselectro.wordpress.com/2015/09/">September 2015</a></li>
+	<li><a href="https://alselectro.wordpress.com/2015/07/">July 2015</a></li>
+	<li><a href="https://alselectro.wordpress.com/2015/05/">May 2015</a></li>
+				</ul>
+			</li>
+					</ul>
+	</div>
+
+</div><!-- /footer -->
+
+<div id="credits">
+	<div id="creditsleft"><a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a> | <a href="https://wordpress.com/themes/motion/" title="Learn more about this theme">The Motion Theme</a>.</div>
+	<div id="creditsright"><a href="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/#top">[ Back to top ]</a></div>
+</div><!-- /credits -->
+
+</div><!-- /wrapper -->
+
+<!-- wpcom_wp_footer -->
+<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/alselectro.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/alselectro.wordpress.com\/wp-login.php?action=logout&_wpnonce=da6f288b8e","homeURL":"https:\/\/alselectro.wordpress.com\/","postID":"3084","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(5)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -279px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “alselectro”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Join 162 other followers</p>
+			<p><input type="email" name="email" placeholder="Enter your email address" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="24119465">
+			<input type="hidden" name="source" value="https://alselectro.wordpress.com/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="e4a65009eb"><input type="hidden" name="_wp_http_referer" value="/2015/05/13/wi-fi-module-esp8266-3-connect-to-android-mobile/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/alselectro.wordpress.com\/2015\/05\/13\/wi-fi-module-esp8266-3-connect-to-android-mobile\/":3084};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/saved_resource(6)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "alselectro.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/725X1342.skimlinks.js"></script>		<iframe src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'24119465','blog_tz':'5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'24119465','v':'wpcom','tz':'5','user_id':'0','post':'3084','subd':'alselectro'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWpYP2xZaVBVeHZiOUhkaixZNmFDajhGVUctWTNGWXJMUl80ZnBrSElRMSxqXUZfKzdlSDRHNTVqNS5IclF3K2dTLE5fVnJZTUFOX2UxbEV8WjZJQW0zeHwteS96TVdQTXlGeElWdkNzNWN6RlNGRThQVFh3Jnpbc0lQMFFrdmpSb1ZDJjd0dWR2T0oyJW5vdi9kPWNyfHpReCZZW2k0MVprWVtufHRPdTQxVFRdMS18Z3NuZ1AxbUJBcHFEVVYrdVU5NURtM2JVL0l8d35QUkZCJUZuaG5yaCUmNSx4dixVWy5LOGhWWDdvVjJQXWlBLTVRNVFOeVZlanRQOVdfcnI5TzJvdFlFTDJYL1ZqMXo='}]);
+_stq.push([ 'clickTrackerInit', '24119465', '3084' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<!--
+	generated 110 seconds ago
+	generated in 0.348 seconds
+	served from batcache in 0.002 seconds
+	expires in 190 seconds
+-->
+<img src="./Wi Fi Module ESP8266 – 3. Connect to Android Mobile_files/g.gif" id="wpstats"></body></html>
