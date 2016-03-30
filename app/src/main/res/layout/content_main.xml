@@ -10,5 +10,40 @@
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
     <TextView android:text="Wifi Car App!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/server_ip"
+        android:layout_marginLeft="46dp" />
+
+    <EditText
+        android:layout_width="@android:dimen/thumbnail_height"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:inputType="text"
+        android:id="@+id/server_ip"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="54dp"
+        android:hint="Write Server IP"
+        android:nextFocusDown="@+id/port_number" />
+
+    <EditText
+        android:layout_width="@android:dimen/thumbnail_height"
+        android:layout_height="wrap_content"
+        android:id="@+id/port_number"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/server_ip"
+        android:layout_alignLeft="@+id/server_ip"
+        android:hint="Write Port Number"
+        android:nextFocusUp="@+id/server_ip" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/button"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView" />
+
 </RelativeLayout>
