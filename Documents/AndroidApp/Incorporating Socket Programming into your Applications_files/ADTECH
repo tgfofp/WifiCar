@@ -1,9 +1,0 @@
-document.write("<scr"+"ipt type='text/javascript' src='https://www.googletagservices.com/tag/js/gpt.js'>\n");
-document.write("googletag.pubads().definePassback('/9240792/house_mrec', [300, 250]).display();\n");
-document.write("</scr"+"ipt>\n");
-
-
-document.write('<img src="https://atpixelus.alephd.com/post_adtech?xH3z8opNzJvJ6rtndTDAjCF-nK18PSlu4ycpBzErLGFgJplzj6jiqTevyUl9KOFHRIRTktqsBHNfs7rGYwaI-sY0HkVsNvAJFEOar9cuPxiXG.Z22B4US7M36A83en47EOVpbkJyal0fFrf64hlTj.J.-AAtr-VLu1ju8hRJIPPHZTd.tCvxdTggSJwePbjC-srwk2RNqwQ0nDd.vBlCUDVlnEUY-AMfQ-JQRGZznskFwPEiDwrS5KJSO8bgootrhvJwSY9o2qnmnP4GWHbU8w==" width="1" height="1"  style="display:none;">');
-document.write('<img src="https://rs.gwallet.com/r1/cm/p81r" width="1" height="1" style="display:none;">');
-document.write('<img src="https://x.bidswitch.net/sync?ssp=aol" width="1" height="1" style="display:none;">');
-document.write('<img src="https://pixel.quantserve.com/pixel/p-NcBg8UA4xqUFp.gif?idmatch=0" width="1" height="1" style="display:none;">');
