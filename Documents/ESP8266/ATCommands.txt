@@ -1,0 +1,5 @@
+		AT Commands
+		
+   AT commands are used to control MODEMs. 
+   AT is the abbreviation for Attention. 
+   These commands come from Hayes commands that were used by the Hayes smart modems.

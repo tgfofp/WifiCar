@@ -1,0 +1,37 @@
+			Git Cheat Sheet(Please feel free to update it with more useful commands)
+			
+	! Even though you are interacting with a remote repository everything is still happening locally ! 
+	! Have to manually retrieve and push changes to the remote repository !
+	git init - initialise a new repository 
+	git status - check weather there are any changed or new files
+	1. git add fileName - for staging the new changes
+	2. git add . - stage everything
+	3. git add *.java - stage by pattern
+	4. touch .gitignore / write file names or pattern inside the file / 
+	git rm - for removing staged changes
+	1. git commit - for committing to the repository / I - to insert a message / Esc - to exict insert mode / :wq - rewrite the current file and git will finish commit
+	2. git commit -m 'Change message'
+   !3. git commit -a -m 'Change message' - automatic staging of only OLD files !!! New files still need to be added manually !!!
+	git log - commit history
+	git branch NameOfBranch 
+	git checkout NameOfBranch / git checkout master
+	in master / git merge NameOfBranch / if there a conflicts they have to be fixed manually OR install WinMerger (or other) and configure git to use it with ---> git mergetool
+	git stash - stashes the changes you made on one branch so they don't show and you can use them later (that way they are ignored and you do a merge) / used after diff b/n branches and git status
+	git stash apply - to continue your work
+	git remote -v (origin is an alias for the repo that was cloned so can be used in commands instead of the URL)
+	git clone URL
+	git fetch origin - gets any changes from the server since you last cloned or fetched (may have to merge manually if there are conflicts)
+	git pull origin - automatically fetches and merges all the changes from the remote branch to your current branch
+	git commit -a -m 'changes' 
+	git push origin master - to push your changes to the remote repository known as origin, and commit them to the master branch / need to give credentials
+	git remote add MyRepo URL - to add remote repository
+	git clean -f -n -> Show what will be deleted with the -n option
+	git clean -f -> Then - beware: this will delete files - run (For more: http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-my-current-git-branch)
+	git reset --hard HEAD  --> Remove changes back to head
+	git diff -- myfile.txt -->  If you want to see what you haven't git added yet
+	git diff --cached -- myfile.txt --> f you want to see already-added changes
+	
+	-------Tricks----------
+	- Change the URI (URL) for a remote Git repository: 
+		git remote set-url origin git://new.url.here
+		(see git help remote) or you can just edit .git/config and change the URLs there.

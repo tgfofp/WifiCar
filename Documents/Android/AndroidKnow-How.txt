@@ -1,0 +1,264 @@
+			Android Know-How (Still in development)
+			
+	- Android Studio : Failure [INSTALL_FAILED_OLDER_SDK]
+	There are my config to support L and old versions of android:
+	As result you will have flavors:
+
+	- What does ABIs: armeabi-v7a in the android version detail mean? please provide the internal details of how this is used?
+	ARM is a type of instruction set for CPUs usually used on mobile devices.
+	armeabi stands for ARM embedded application binary interface, it means the image that the android is running is built with EABI support. 
+	armeabi-v7a code is extended armeabi code which can contain extra CPU instructions, and havse support for hardware floating point operations.
+	
+	- If I have problem with my phone not being recognized:
+	 Most likely it's related to the drivers.
+	 To fix it install Android-Sync and set in the Preferences --> Auto-Sync !! 
+	 It will intall the drivers automatically.
+	 
+	- Build unsigned APK file with Android Studio:
+		Open Gradle tab on the right side
+		Double click YourProject/:app/assemble (or assembleDebug)
+		You'll find the apk here
+		.../YourProject/app/build/outputs/apk/app-debug.apk
+		
+	-	Implementing Methods of an Interface
+		Ctrl + Shift + P
+
+	-	Exception 'open failed: EACCES (Permission denied)'
+		 The <uses-permission was in the wrong place. This is right:
+		<manifest> 
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			
+			<application>
+				...
+			</application>
+		</manifest> 
+
+------Coursera-------------------
+Android Platform - Software stack for mobile devices
+
+Architecture:
+
+1. Linux Kernel:
+	Security
+	Memory & Process Menagement
+	File & Network I/O
+	Device Drivers
+	+ Power Management
+	+ Android Shared Memory
+	+ Low Memory Killer
+	+ Interprocess Communication
+	
+2. Libraries
+	System C library - Bionic libc
+	Surface Mgr. - Display Menagement
+	Media Framework - Audio/Video
+	Webkit - Browser Engine
+	OpenGl - Graphics Engines
+	SQLite - Relational Database Engine
+		+ Android Runtime(Writing and Running Android applications):
+			Core Java libraries
+			Dalvik Virtual Machine - Designed for Resource-constrained Environments : Slower CPU, Less RAM, Limited Battery Life
+
+4. Application Framework		
+	 Package Manager - DB that keeps track of app packages on device (One app can use another)
+	 Window Manager - manages all windows that comprising an app (Main Window, Sub-window, Notification Bar )
+	 View System  - Provides common UI elements (Icons, Text Entry box, Buttons, Tabs)
+	 Resource Manager - non-compiled resources (strings-language, graphics, layout files)
+	 Activity Manager - Manages app Lifecycle and Navigation Stack / manages an application's lifecycle
+	 ContentProvider - DB that allows applications to Store and Share Structured Information = Inter-Application Data Sharing
+	 LocatonManager - Provides Location & Movement Information (App query the LocationManager for current location)
+	 NotificationManager - Place Notification Icons in the Status Bar when important events occur
+	 
+5. Applications	 - All are optional and can be removed !
+	Home - main screen
+	Contacts - Contacts DB
+	Phone - Dial Phone Numbers
+	Browser - view web pages
+	Email Reader - Compose & Read Email messages
+	 
+Android Tools & Debugger :
+	 - Has normal debugger
+	 Dalvik Debug Monitor Service (DDMS):
+	   1. File Explorer - Go to Android Device Monitor , DDMS , File Explorer / shows what is on the device
+	   2. Logcat - Go to Android Monitor, logcat -> provides a console window that displays log messages emitted by programs running on your device
+	   3. Traceview - Start Debug, Go to the clock(start method tracing), stop the tracing, see the method callstack -> trace the methods of the application calls
+	   4. Hierarchy view - Go to Android Device Monitor, Windows, Open perspective,Hierarchy view -> Shows the runtime organization of the UI in graphic
+	 
+Android Java Four components:
+		1. Activity - GUI to give and receive information
+		2. Service - For long running or in the back operations / music keeps playing in the background
+		3. Broadcast receiver - listen for and responds to events that happen on the device / sms is received in the background
+		4. Content provider - Allow multiple applications to store and share data
+		
+activity_main.xml - defines the app UI layout
+
+-  Defining Resources:
+	 - Strings:
+		 1. Strings
+		 2. Strings Arrays
+		 3. Plurals -> res/values/*.xml --> Accessed in other resources as: @string/string_name
+										--> Accessed in Java as: R.string.string_name
+	 - Layout files:
+		res/layout/*.xml -->  Accessed in other resources as: @layout/layout_name
+						 -->  Accessed in Java as: R.layout.layout_name
+
+		R - generated files containting resources
+		
+	- AndroidManifest.xml
+		App Name, Components, Other - Required permissions, App features, Minimum API level
+		
+	- Install a .apk file in emulator
+	  1. from eclipse/Anroid Studio
+	  2. From the cli / Terminal
+	   - Enable USB Debugging on the devide - Settings, Applications, Development, USB Debugging / hit 7 time on the Setting/"About Phone"/Build Number
+	   -  % adb install <path_to_apk>
+			adb install app\build\outputs\apk\app-debug.apk      - Install an application which is NOT on the device
+			adb install -r app\build\outputs\apk\app-debug.apk   - Install an application which IS on the device
+			
+	- Port Forwarding:
+		1. telnet localhost 5554
+		2. redir add tcp:8081:8080
+		Client in emulator will connect to the locahost, that is the development machine, which is aliased at 10.0.2.2 at port 8081.	
+		So now the packets will go through this direction : 
+		Client Emulator -> development machine at 10.0.2.2 : 5000  -> Server Emulator at 10.0.2.15 : 6000.
+	To read more use: https://examples.javacodegeeks.com/android/core/socket-core/android-socket-example/	
+	
+	
+	- Install apk file if more then one emulators/devices are connected
+	  1. adb devices  //list of devices and its unique ID
+	  2. adb -s "deviceIDfromlist" install path+apkName
+	  
+	- How to change fontFamily of TextView in Android  
+		android:fontFamily="sans-serif"           // roboto regular
+		android:fontFamily="sans-serif-light"     // roboto light
+		android:fontFamily="sans-serif-condensed" // roboto condensed
+		android:fontFamily="sans-serif-thin"      // roboto thin (android 4.2)
+		android:fontFamily="sans-serif-medium"    // roboto medium (android 5.0)
+	in combination with: 
+		android:textStyle="normal|bold|italic"
+		this 14 variants are possible ===> http://stackoverflow.com/questions/12128331/how-to-change-fontfamily-of-textview-in-android
+
+ Everything you need to know for starting an Android Project plus some very advanced features is located at:
+	http://developer.android.com/training/
+	
+	To add a new icon for the app --> right click on "app" folder , new Image Asset
+	
+	To speed up the emulator:
+	1. Open the SDK Manager, go to Extras and install Intel x86 Emulator Accelerator (HAXM installer)
+	2. Go to ...\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager\intelhaxm-android.exe to install the Accelerator Manager
+
+More about the Activity class: 
+	 - Activity backstack:   
+							 Activity3
+				  Activity2	 Activity2	
+		Activity1 Activity1  Activity1
+		
+	- To start a new Activity inside an Activity, an Intent object that specifies the activity you want to create has to be added.
+	  You pass this Intent object to a method:
+											startActivity()
+											startActivityForResult() --> eventually receive a callback to onActivityResult().
+											
+	- Started Activity can set its result by calling Activity.setResult() - pubic final void setResult(int resultCode)
+
+	- To Retain an Object - hard to recompile data can be cashed to speed config changes:
+		onRetainNonConfigurationInstance() to Build & Return Configuration Object called b/n onStop() and onDestroy()
+		getLastNonConfigurationInstance() during onCreate() to recover retained object
+              OR
+	   Manual Reconfiguration in AndroidManifest.xml:
+		<activity android:name-".MyActivity" android:configChanges="orientation|screensoze|keyboardHidden"...>
+
+More about Intent Class:
+ - IntentFilters
+	  <activity ...>
+		<intent-filter...>
+		  ...
+			<action android:name="actionname" />
+		  ...
+		</intent-filter>
+	   ...
+	  </activity>   
+	Can add data to the IntentFilter in a <intent-filter...> 
+											<data .... 
+											 android:mimeType="string"
+											 android:schema="string"
+											 ....
+											/> 
+										  </intent-filter>
+										  
+Permissions:
+ - Must be added inside the AndroidManifest.xml
+	<uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+	
+- <!-- Defines a custom permission -->
+    <permission
+        android:name="course.examples.permissionexample.BOOM_PERM"
+        android:description="@string/boom_perm_string"
+        android:label="@string/boom_permission_label_string" >
+    </permission>	
+
+ - How to align text one below the other in android?	
+	Simply use "RelevantLayout" to place your Item's to related to other's.
+	Or you can place one text view to below of other like this:
+		android:layout_below="@+id/your_another_text_view"
+	
+Fragment Class:
+ - Used to design UI for both tablets and phones
+ 
+User Interface Classes:
+	-View
+	
+	- activity_main.xml:
+		used to display coordinatorLayout,tabLayout,floatingActionButton,viewPager etc.
+	- content_main.xml:	
+	    used to display your stuff i.e. what you want to display to users
+		
+	- java.net.ConnectException: localhost/127.0.0.1:8080 - Connection refused:
+		  If you are referring your localhost on your system from the Android emulator then you have to use http://10.0.2.2:8080/.
+		  Because Android emulator runs inside a Virtual Machine therefore here 127.0.0.1 or localhost will be emulator's own loopback address.
+	
+	- Remove default text from edit text box Android:
+		Instead of adding "default text" to the EditText, why don't you just use the built in hint functionality?
+		<EditText android:hint="Phone Number" />
+		
+	- 	Handle Tab Navigation
+		<Button
+        android:id="@+id/button1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:nextFocusForward="@+id/editText1"
+        ... />
+    <Button
+        android:id="@+id/button2"
+        android:layout_below="@id/button1"
+        android:nextFocusForward="@+id/button1"
+        ... />
+		
+Commands:
+
+	telnet localhost port#
+	network speed edge		
+	network speed full
+	power capacity 10
+	power status not-charging
+	geo fix -77.04 38.05
+	sms send 301555555 "This is a message"
+	call port#
+	
+	
+-------Android Studio / IntelliJ : ------
+	
+	Has a real neat short-cuts together with an Eclipse mapping:
+		File--> Settings-->Keymap / Eclipse
+	
+	“Link with editor” in android studio:
+		That's "Autoscroll from Source". Go to the Settings of the project itself(the window to the left), a dropdown menu is displayed,
+		press the option.
+		http://stackoverflow.com/questions/11051692/how-to-make-scroll-from-source-feature-always-enabled
+		
+	Viewing Structure of a Source File
+		To view the file structure, do one of the following
+		- On the main menu, choose View | Tool Windows | Structure.
+		- Pres StructureTool Button
+		- Press Alt+7.
+		- Press Ctrl+F12.
