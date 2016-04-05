@@ -1,5 +1,6 @@
 			Android Know-How (Still in development)
-			
+	
+	
 	- Android Studio : Failure [INSTALL_FAILED_OLDER_SDK]
 	There are my config to support L and old versions of android:
 	As result you will have flavors:
@@ -107,7 +108,8 @@ activity_main.xml - defines the app UI layout
 	- AndroidManifest.xml
 		App Name, Components, Other - Required permissions, App features, Minimum API level
 		
-	- Install a .apk file in emulator
+
+	- Install 
 	  1. from eclipse/Anroid Studio
 	  2. From the cli / Terminal
 	   - Enable USB Debugging on the devide - Settings, Applications, Development, USB Debugging / hit 7 time on the Setting/"About Phone"/Build Number
@@ -116,8 +118,10 @@ activity_main.xml - defines the app UI layout
 			adb install -r app\build\outputs\apk\app-debug.apk   - Install an application which IS on the device
 			
 	- Port Forwarding:
-		1. telnet localhost 5554
-		2. redir add tcp:8081:8080
+		1. telnet localhost 5554 / telnet localhost 5556
+		2. redir add tcp:8081:8080 / redir add tcp:8080:8081
+		3. Client - 10.0.2.2 at port 8081
+		4. redir del tcp:8080 (When removing, remove the first port which is redirected)
 		Client in emulator will connect to the locahost, that is the development machine, which is aliased at 10.0.2.2 at port 8081.	
 		So now the packets will go through this direction : 
 		Client Emulator -> development machine at 10.0.2.2 : 5000  -> Server Emulator at 10.0.2.15 : 6000.
@@ -146,6 +150,13 @@ activity_main.xml - defines the app UI layout
 	To speed up the emulator:
 	1. Open the SDK Manager, go to Extras and install Intel x86 Emulator Accelerator (HAXM installer)
 	2. Go to ...\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager\intelhaxm-android.exe to install the Accelerator Manager
+	
+	- Difference between Google APIs (x86 System Image) and Google APIs (ARM System Image) in Android 4.4.2 ?
+	    As developer workstations are usually Intel x86 based, the ARM instruction set had to be emulated as well. 
+		This resulted in poor performance from the AVDs due mainly to the amount of translation the x86 processor was doing to also emulate the ARM instruction set.
+		At Android 4.0.3 (API 15) Intel provided their own x86 based Android system image. 
+		This could then be used to create AVDs that did not need to do ARM translation. 
+		Combined with the Intel Hardware Accelerated Execution Manager (HAXM) the x86 AVMs were up to 10 times faster than the equivalent ARM emulators.
 
 More about the Activity class: 
 	 - Activity backstack:   
@@ -166,6 +177,10 @@ More about the Activity class:
               OR
 	   Manual Reconfiguration in AndroidManifest.xml:
 		<activity android:name-".MyActivity" android:configChanges="orientation|screensoze|keyboardHidden"...>
+		
+	- How can I maximize the editor pane?	
+		The closest thing would be to hide all tool windows by invoking the Hide All Tool Windows action. 
+		The shortcut for that is Ctrl + Shift + F12 (Default keymap).
 
 More about Intent Class:
  - IntentFilters
@@ -244,7 +259,7 @@ Commands:
 	geo fix -77.04 38.05
 	sms send 301555555 "This is a message"
 	call port#
-	
+
 	
 -------Android Studio / IntelliJ : ------
 	

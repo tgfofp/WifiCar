@@ -9,12 +9,16 @@ import java.net.UnknownHostException;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
+/**
+ * Created by gpaskov on 25-03-16.
+ */
+
 public class Client extends AsyncTask<Void, Void, Void> {
 
-    String dstAddress;
-    int dstPort;
-    String response = "";
-    TextView textResponse;
+    private String dstAddress;
+    private int dstPort;
+    private String response = "";
+    private TextView textResponse;
 
     public Client(String addr, int port, TextView textResponse) {
         dstAddress = addr;
@@ -64,6 +68,7 @@ public class Client extends AsyncTask<Void, Void, Void> {
             }
         }
         return null;
+
     }
 
     @Override
