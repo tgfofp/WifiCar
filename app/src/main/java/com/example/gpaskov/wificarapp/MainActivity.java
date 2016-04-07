@@ -37,8 +37,12 @@ public class MainActivity extends Activity {
         buttonConnect = (Button) findViewById(R.id.connectButton);
         buttonClear = (Button) findViewById(R.id.clearButton);
         response = (TextView) findViewById(R.id.responseTextView);
+
         buttonDebug = (Button) findViewById(R.id.debug_button);
+        buttonDebug.setVisibility(View.INVISIBLE);
+
         buttonRun = (Button) findViewById(R.id.run_button);
+        buttonRun.setVisibility(View.INVISIBLE);
 
 
         buttonConnect.setOnClickListener(new OnClickListener() {
@@ -49,6 +53,8 @@ public class MainActivity extends Activity {
                         .toString().trim(), Integer.parseInt(editTextPort
                         .getText().toString().trim()), response);
                 myClient.execute();
+                buttonDebug.setVisibility(View.VISIBLE);
+                buttonRun.setVisibility(View.VISIBLE);
 
                 buttonDebug.setOnClickListener(new OnClickListener() {
                     @Override

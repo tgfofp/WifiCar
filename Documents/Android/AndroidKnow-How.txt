@@ -1,6 +1,5 @@
 			Android Know-How (Still in development)
 	
-	
 	- Android Studio : Failure [INSTALL_FAILED_OLDER_SDK]
 	There are my config to support L and old versions of android:
 	As result you will have flavors:
@@ -108,7 +107,6 @@ activity_main.xml - defines the app UI layout
 	- AndroidManifest.xml
 		App Name, Components, Other - Required permissions, App features, Minimum API level
 		
-
 	- Install 
 	  1. from eclipse/Anroid Studio
 	  2. From the cli / Terminal
@@ -116,9 +114,10 @@ activity_main.xml - defines the app UI layout
 	   -  % adb install <path_to_apk>
 			adb install app\build\outputs\apk\app-debug.apk      - Install an application which is NOT on the device
 			adb install -r app\build\outputs\apk\app-debug.apk   - Install an application which IS on the device
+			adb -s emulator-5556 install -r app\build\outputs\apk\app-debug.apk  - With multiple devices (need to change to the proper emulator)
 			
 	- Port Forwarding:
-		1. telnet localhost 5554 / telnet localhost 5556
+		1. telnet localhost 5556
 		2. redir add tcp:8081:8080 / redir add tcp:8080:8081
 		3. Client - 10.0.2.2 at port 8081
 		4. redir del tcp:8080 (When removing, remove the first port which is redirected)
@@ -131,6 +130,7 @@ activity_main.xml - defines the app UI layout
 	- Install apk file if more then one emulators/devices are connected
 	  1. adb devices  //list of devices and its unique ID
 	  2. adb -s "deviceIDfromlist" install path+apkName
+			
 	  
 	- How to change fontFamily of TextView in Android  
 		android:fontFamily="sans-serif"           // roboto regular
@@ -158,6 +158,86 @@ activity_main.xml - defines the app UI layout
 		This could then be used to create AVDs that did not need to do ARM translation. 
 		Combined with the Intel Hardware Accelerated Execution Manager (HAXM) the x86 AVMs were up to 10 times faster than the equivalent ARM emulators.
 
+	- ADB Connection Error: Unable to create Debug Bridge: Unable to start adb server: Unable to detect adb version, adb output	
+		Replacing old platform tools fixed my problem
+		
+	- “The connection to adb is down, and a severe error has occured.”	
+		Go to Task Manager in windows7 -> processes -> selected the adb.exe -> End Process. 
+		After that I go to cmd prompt and type adb start-server. This time adb statred succefully.
+			OR 	
+		type adb kill-server (Eclipse should be closed before issuing these commands)
+		then type adb start-server
+
+	- Rendering Problems Exception raised during rendering
+		Change the android version(in Layout/Design/The small Android Robot) used to render layouts from Android Studio back to "API 23: Android 6.0".
+		http://stackoverflow.com/questions/35914565/android-studio-rendering-problems-exception-raised-during-rendering-com-androi
+		
+	- "This computer meets the requirements for HAXM, but Intel virtualization Technology (VT-x) is not turned on. HAXM cannot be installed until VT-x is enabled."	
+		Must be enabled inside the BIOS.
+		http://amiduos.com/support/knowledge-base/article/enabling-virtualization-in-lenovo-systems
+		
+	- How to change the build tools version number for all of my modules in Android Studio/Gradle?	
+		Change all  build.gradle in your modules to build with the version you would like.
+			OR 
+		Go to File / Project Structure / Modules / Properties / Compile SDK  Version and Build Tools Version
+		
+	- Failed to push selection: Read-only file system when I try to push a file:
+		Just go to C:\Documents and Settings\<adminstrator>\.android\avd , 
+		take 'properties' of your avd folder (there is a folder for each of the avd's), uncheck 'Read only' -> OK
+		This was the only thing that worked for me.
+
+	- How can I hide/show an element when a button is pressed?
+		Take the reference of the TableLayout by using findViewById(int) in the onClickListener(). 
+		Once you have the object of TableLayout, call setVisibility(View.VISIBLE)
+		
+	- Transfer socket from one activity to another:
+		You can't 'pass a Socket' from one Activity to another, but you do have other options.
+		Option 1. Create a class with a static reference to your Socket and access it that way. In your first Activity you set the Socket, which can then be accessed statically from your second Activity.
+		public class SocketHandler {
+			private static Socket socket;
+
+			public static synchronized Socket getSocket(){
+				return socket;
+			}
+
+			public static synchronized void setSocket(Socket socket){
+				SocketHandler.socket = socket;
+			}
+		}
+		You can then access it by calling SocketHandler.setSocket(socket) or SocketHandler.getSocket() from anywhere throughout your app.
+			http://stackoverflow.com/questions/23249163/transfer-socket-from-one-activity-to-another	
+		
+	- How do I return values from a previous Activity ?
+			String value;
+			Intent i = new Intent(currentActivityName.this, nextActivityName.class);
+			i.putExtras("tag", value);
+			startActivity(i);
+		 And then in the new activity, you would retrieve it like this.
+			String x = getIntent.getExtras("tag");
+			
+	- Can I use putExtra to pass multiple values:
+			You could pass a 'bundle' of extras rather than individual extras if you like, for example:-
+				Intent intent = new Intent(this, MyActivity.class);
+				Bundle extras = new Bundle();
+				extras.putString("EXTRA_USERNAME","my_username");
+				extras.putString("EXTRA_PASSWORD","my_password");
+				intent.putExtras(extras);
+				startActivity(intent);
+			Then in your Activity that your triggering, you can reference these like so:-
+				Intent intent = getIntent();
+				Bundle extras = intent.getExtras();
+				String username_string = extras.getString("EXTRA_USERNAME");
+				String password_string = extras.getString("EXTRA_PASSWORD");
+			Or (if you prefer):-
+				Bundle extras = getIntent().getExtras();
+				String username_string = extras.getString("EXTRA_USERNAME");
+				String password_string = extras.getString("EXTRA_PASSWORD");
+					http://stackoverflow.com/questions/8452526/android-can-i-use-putextra-to-pass-multiple-values
+					
+	- Attach the debugger to a running process		
+		You don't always have to restart your app to debug it. To debug an app that you're already running:
+		Click Attach debugger to Android process.
+
 More about the Activity class: 
 	 - Activity backstack:   
 							 Activity3
@@ -181,6 +261,13 @@ More about the Activity class:
 	- How can I maximize the editor pane?	
 		The closest thing would be to hide all tool windows by invoking the Hide All Tool Windows action. 
 		The shortcut for that is Ctrl + Shift + F12 (Default keymap).
+		
+	- How can I disable the android emulator keyboard from popping up ?	
+		Go to the settings within the emulator:
+		settings -> language and keyboard and uncheck "Android keyboard" and the other odd ones if they are checked too
+		('menu -> settings -> language & keyboard')
+
+
 
 More about Intent Class:
  - IntentFilters

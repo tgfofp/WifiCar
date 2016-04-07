@@ -8,11 +8,14 @@
     android:weightSum="1">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.16"
+        android:text="Wi-Fi Car App"
+        android:layout_gravity="center_horizontal"
+        style="@style/Widget.AppCompat.ActionBar.TabView" />
 
     <EditText
         android:id="@+id/addressEditText"
@@ -41,8 +44,10 @@
 
     <TextView
         android:id="@+id/responseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08"
+        android:hint="Responce from server..." />
 
     <Button
         android:layout_width="192dp"
