@@ -1,0 +1,1048 @@
+1.If there is a difference between the source code and the .jar/.war which is running check whether or not you have replace the right .jar/.war file which is used!!!!
+This is true especially if there is mismatch between the source - if it goes to the wrong lines and only "monitor" is giving the right result.
+
+2. Always use what you already have first!!!
+
+3. The Console/CMD can also be keeping a handle on a process/folder/etc.
+
+4. For Solaris
+netstat -anv | grep 60031
+ps -aAdeflcjLPyZ | grep 60032
+find `pwd` -name "*.jar"
+
+Encrypted passes :
+spm_app_user    t7hu/qJEE5hDSzhqYiRguA==
+PM_App_User     pz7RZyj9+fIuLZElCznVwg==
+
+4. Veritas Symantec 
+
+
+	Add user:
+	hauser -add username [-priv Administrator
+	
+	haconf -makerw
+	hauser -add comverse -priv Administrator
+	haconf -dump -makero
+
+	http://www.datadisk.co.uk/html_docs/veritas/veritas_cluster_cs.htm
+	http://www.cheat-sheets.org/saved-copy/2675288-Veritas-Cluster-Cheat-Sheet.pdf
+	http://unixadminschool.com/blog/2011/08/vcs-veriras-cluster-services-beginners-lesson-cluster-membership-io-fencing/#
+
+	To check the Symantec log files
+
+	-Access the following file:
+
+	/var/VRTSvcs/log/engine_A.log
+	-Verify if there are any CVM or PrivNIC errors logged in this file, since they may prove to be critical errors.
+
+	-You can access the vxconfigd log file at:
+
+	/var/adm/ras/vxconfigd.log
+	There are additional log files pertaining to the agents for SF Oracle RAC components such as CVM and CFS in the /var/VRTSvcs/log directory, which are also helpful in diagnosing issues.
+
+	To check the agent log files for CVM:
+
+	# /var/VRTSvcs/log/CVMVolDg_A.log
+	To check the agent log files for CFS:
+
+	# /var/VRTSvcs/log/CFSMount_A.log
+	To check the agent log files for Oracle:
+
+	# /var/VRTSvcs/log/Oracle_A.log
+	
+	VERITAS Cluster Server (VCS) configuration file - 
+	/etc/VRTSvcs/conf/config/main.cf.
+
+	The resource types are defined, by default, in the 
+	/etc/VRTSvcs/conf/config/types.cf file
+	
+	Starting VCS
+
+	You can start VCS using one of the following approaches:
+
+	Using the installvcs -start command
+	Manually start VCS on each node
+	To start VCS
+
+	To start VCS using the installvcs program, perform the following steps on any node in the cluster:
+	Log in as root user.
+	Run the following command:
+	# /opt/VRTS/install/installvcs -start
+
+	To start VCS manually, run the following commands on each node in the cluster:
+	Log in as root user.
+	Start LLT and GAB. Start I/O fencing if you have configured it.
+	Skip this step if you want to start VCS on a single-node cluster.
+
+	 
+
+	LLT 
+
+	# /etc/init.d/llt.rc start
+
+	# /etc/init.d/llt start
+
+
+	GAB 
+
+	# /etc/init.d/gab.rc start
+
+	# /etc/init.d/gab start
+
+
+	I/O fencing 
+
+	# /etc/init.d/vxfen.rc start
+
+	# /etc/init.d/vxfen start
+
+	Stop the cluster
+	hastop -local 
+
+	Start the VCS engine.
+	# hastart
+
+	To start VCS in a single-node cluster, run the following command:
+
+	# hastart -onenode
+
+	See Starting the VCS engine (HAD) and related processes
+
+	Verify that the VCS cluster is up and running.
+	# gabconfig -a
+
+	Make sure that port a and port h memberships exist in the output for all nodes in the cluster. If you configured I/O fencing, port b membership must also exist.
+	
+	Find all storage devices attached to a Linux machine:
+	/proc/partitions will list all the block devices and partitions that the system recognizes. You can then try using file -s <device> to determine what kind of filesystem is present on the partition, if any.
+	
+	--- Resource is stuck in a waiting to go offline state
+	Today a System suddenly lost storage, the Service Group can't be failed over to the other node, it stucked in W_OFFLINE_PROPAGATE status.
+	hastatus -sum 
+	hagrp -flush OraVCMOD2ST -sys  chiscorast03
+	hares -probe VCMOD2ST_Ora_Vol_vcmod2sta -sys  chiscorast03
+	
+						Solution
+
+
+					Try the following to clear the states:
+
+					1. Flush the Service Group.
+					 
+					hagrp -flush <sg_name> -sys <sys_name>
+					hares -probe <res_name> -sys <sys_name>
+
+					Then run hastatus -sum again to see if any changes occurred to the status. 
+
+
+					2. Restart the VCS cluster engine (had). This can be done while leaving all the applications running.
+					   
+					First freeze all the VCS service groups, one group at a time: 
+					 
+					hagrp -list | grep <sys_name>
+					hagrp -freeze <vcs_service_group_name>
+
+					 Then restart VCS
+					haconf -dump -makero
+					hastop -all -force
+					hastart 
+
+					 Now, unfreeze the VCS service groups:  
+					hagrp -list | grep <sys_name>
+					hagrp -unfreeze <vcs_service_group_name>
+						
+	
+5. Cryptography
+
+A rainbow table is a precomputed table for reversing cryptographic hash functions, usually for cracking password hashes. Tables are usually used in recovering a plaintext password up to a certain length consisting of a limited set of characters. It is a practical example of a space/time trade-off, using less computer processing time and more storage than a brute-force attack which calculates a hash on every attempt, but more processing time and less storage than a simple lookup table with one entry per hash. Use of a key derivation function that employs a salt makes this attack infeasible.
+In cryptography, a salt is random data that is used as an additional input to a one-way function that "hashes" a password or passphrase.[1] The primary function of salts is to defend against dictionary attacks versus a list of password hashes and against pre-computed rainbow table attacks.
+A new salt is randomly generated for each password. In a typical setting, the salt and the password are concatenated and processed with a cryptographic hash function, and the resulting output (but not the original password) is stored with the salt in a database. Hashing allows for later authentication while protecting the plaintext password in the event that the authentication data store is compromised.
+
+6. Linux commands
+	- crontab means time table and is a list of commands that you want to run on a regular schedule, and uses a job scheduler cron
+	crontab -l -u root 
+	crontab -e
+	.pm file is module file for Linux used for unix shell scripting
+	
+	How to remove CTRL-M (^M) characters from a file in Linux
+	The following are different options to remove the ^M characters:
+
+	- The simplest solution: use the dos2unix command:
+	dos2unix filename
+
+	- Use the stream editor sed:
+	sed -e "s/^M//" filename > newfilename
+	Note: To enter ^M, type CTRL-V + M. That is, hold down the CTRL key then press V and M in succession.
+
+	- You can also use vi:
+	Inside vi [in ESC mode] type: :%s/^M//g
+	Note: To enter ^M, type CTRL-V + M. That is, hold down the CTRL key then press V and M in succession.
+	
+	- Locate rpm:
+	 rpm -qa | grep -i XXX.rpm
+	
+	- Remove rpm:
+	rpm -e XXX.rpm
+	
+	-Remove rpm without using scripts:
+	rpm --noscripts -e XXX.rpm
+	
+	- Additional options:
+	http://www.rpm.org/max-rpm/s1-rpm-erase-additional-options.html
+	
+	Inside the project:
+	#!/bin/sh
+
+	tr -d "\015" < setEnv.sh >setEnv.sh_new 
+	rm -f setEnv.sh
+	mv setEnv.sh_new setEnv.sh
+	
+	
+	See all the interfaces on a server:
+	 netstat | grep 50451
+	 
+	 Show a Table Of All Network Interfaces:
+		netstat -i
+	 
+		/sbin/ifconfig -a
+		
+		eth0:0 - Virtual network
+		
+		
+		Use chown to change ownership and chmod to change rights:
+			sudo chown -R username:group directory  - will change ownership (both user and group) of all files and directories inside of directory and directory itself.
+		
+			chown -R swim:swim SCDB_7.2.0.0_03/
+			
+		Delete/Remove a Directory
+		
+			a] rmdir command – Deletes the specified empty directories.
+				rmdir directory-name
+				rmdir [option] directory-name
+			
+			b] rm command – Delete the file including sub-directories.
+				rm -rf letters/
+	
+	List all users and their groups:
+
+		cat /etc/passwd	
+	
+	For more:
+	http://www.cyberciti.biz/faq/linux-list-users-command/
+	
+	What does '$?' mean in bash scripts?
+			
+	- In Unix, how do I change the permissions for a file?
+		https://kb.iu.edu/d/abdb
+7. Perl
+
+	Use of uninitialized value in substitution (s///) error in PERL:
+	
+	If $rs is undefined, then it must be because the match "$rs =~ m!([0-9,]+) +EUR!;" failed, leaving $1 undefined. Adding some strategic print statements should help.
+	
+8. Log4j in Windows
+	Use the path as it is on the file system to supply the appender's name, e.g. C:\Users\gpaskov\OMAP\SCDB_7.2.0.0__Debug\SCDB\src\com\comverse\omap\scdb\utility\scdbMain\test
+	
+9. Avoiding Null Pointer Exception and using Assertions:
+		http://stackoverflow.com/questions/271526/avoiding-null-statements
+		
+10. Failed to connect to remote VM. Connection refused. Connection refused: connect
+	-	To fix it first I changed inside Eclipse:
+	
+	Remove your proxy from eclipse!
+	Go to network Connections within General Preferences ( Windows -> Preferences ) and set "Active Provider" to "Direct"
+	- Then I changed the script to stop and wait for the debugger to connect - suspend=n to suspend=y
+	
+11. Automatic forward-deleting
+	Pressing the Insert key
+	
+	If that doesn't work, open Word and take a look at your status bar (bottom of the screen). 
+	In the English versions, one of them says OVR (Word 2003 and older) or Overtype (Word 2007 and newer). 
+	Clicking it changes to Insert mode.
+	
+12. Filesystem package installs fails with "/usr/local: cpio: chown failed - Operation not permitted".	
+	It was due to files and directories being immutable.
+	
+
+				chmod -R ugo+w . --> chmod: changing permissions of `./catalinaBase/conf/ossp_server_strong.jks': Operation not permitted ... etc.
+			So..
+			
+				chattr -R -i -a .
+				chmod -R ugo+w .
+				cd /usr/cti/apps/
+				rm -rf ossp/
+13. Restricting access / Disable user shell for security reasons
+
+	You can use the usermod command to change a user's login shell.
+
+		usermod -s /sbin/nologin myuser
+	If your OS does not provide /sbin/nologin, you can set the shell to a NOOP command such as /bin/false:
+
+		usermod -s /bin/false myuser
+	
+	To give access back and to be able to log-in user shell:
+	
+		usermod -s /bin/tcsh ossp
+		
+14. Java
+
+		- The import javax.servlet can't be resolved
+
+		If you want to leave the JAR in Tomcat's lib folder:
+			Right-click the project, click Properties.
+			Choose Java Build Path.
+			Click Add External JARs...
+			Browse to find servlet-api.jar and select it.
+			Click OK to update the build path.
+			
+		Or, if you copy the JAR into your project:
+		Right-click the project, click Properties.
+		Choose Java Build Path.
+		Click Add JARs...
+		Find servlet-api.jar in your project and select it.
+		Click OK to update the build path.
+		
+	- XML Validation against XSD:
+	http://stackoverflow.com/questions/15732/whats-the-best-way-to-validate-an-xml-file-against-an-xsd-file
+		Schema schema = schemaFactory.newSchema(schemaFile);
+		Validator validator = schema.newValidator();
+		try {
+		  validator.validate(xmlFile);
+		}
+	
+	- Difference between e.getMessage() and e.getLocalizedMessage():
+	 getMessage returns the name of the exception. getLocalizedMessage returns the name of the exception in the local language of the user (Chinese, Japanese etc.).
+	 In order to make this work, the class you are calling getLocalizedMessage on must have overridden the getLocalizedMessage method. 
+	 If it hasn't, the method of one of it's super classes is called which by default just returns the result of getMessage.
+
+	- Note: Check out Oracle JDeveloper 
+	
+	
+	-Java current machine name and logged in user? 
+		To get the currently logged in user:
+			System.getProperty("user.name"); //platform independent 
+		and the hostname of the machine:
+			java.net.InetAddress localMachine = java.net.InetAddress.getLocalHost();
+			System.out.println("Hostname of local machine: " + localMachine.getHostName());
+			
+	- How to get the ip of the computer on linux through Java ?
+	
+	
+	Java questions ?
+	
+	 - What is difference between Thread vs Process in Java ?
+		1) Both process and Thread are independent path of execution but one process can have multiple Threads.
+		2) Every process has its own memory space, executable code and a unique process identifier (PID) while every thread has its own stack in Java but it uses process main memory and share it with other threads.
+		3) Threads are also refereed as task or light weight process (LWP) in operating system
+		4) Threads from same process can communicate with each other by using Programming language construct like wait and notify in Java and much simpler than inter process communication.
+		5) Another difference between Process and Thread in Java is that it's How Thread and process are created. It's easy to create Thread as compared to Process which requires duplication of parent process.
+		6) All Threads which is part of same process share system resource like file descriptors , Heap Memory and other resource but each Thread has its own Exception handler and own stack in Java.
+
+	Java Tricks:
+		- You can skip a check for a parameter being null, but adding the 
+		
+		if ("profile".equals(request.getParameter("param")) {
+			response.sendRedirect("profile.jsp");
+		} else if ("editProf".equals(request.getParameter("param")) {
+			response.sendRedirect("editProfile.jsp");
+		}
+		
+		 ... instead of:
+				request.getParameter("param").equals("profile") --> So if request.getParameter("param") is null it won't get a NullPoinerException
+				
+		
+15. Eclipse
+	-Resource is out of sync with the file system
+		Eclipse produces this message when a file in an Eclipse project is changed outside of Eclipse. To avoid it:
+
+		a) Don't change files outside of Eclipse
+		b) Refresh the workspace/project after changing files outside of Eclipse F5 or
+		c) Enable Window > Preferences > General > Workspace > Refresh Automatically
+		
+
+	
+16. Android
+	- Android Studio : Failure [INSTALL_FAILED_OLDER_SDK]
+	There are my config to support L and old versions of android:
+	As result you will have flavors:
+
+	- What does ABIs: armeabi-v7a in the android version detail mean? please provide the internal details of how this is used?
+	ARM is a type of instruction set for CPUs usually used on mobile devices.
+	armeabi stands for ARM embedded application binary interface, it means the image that the android is running is built with EABI support. 
+	armeabi-v7a code is extended armeabi code which can contain extra CPU instructions, and havse support for hardware floating point operations.
+	
+	- If I have problem with my phone not being recognized:
+	 Most likely it's related to the drivers.
+	 To fix it install Android-Sync and set in the Preferences --> Auto-Sync !! 
+	 It will intall the drivers automatically.
+	 
+	- Build unsigned APK file with Android Studio:
+		Open Gradle tab on the right side
+		Double click YourProject/:app/assemble (or assembleDebug)
+		You'll find the apk here
+		.../YourProject/app/build/outputs/apk/app-debug.apk
+		
+	-	Implementing Methods of an Interface
+		Ctrl + Shift + P
+
+	-	Exception 'open failed: EACCES (Permission denied)'
+		 The <uses-permission was in the wrong place. This is right:
+		<manifest> 
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			
+			<application>
+				...
+			</application>
+		</manifest> 
+
+------Coursera-------------------
+Android Platform - Software stack for mobile devices
+
+Architecture:
+
+1. Linux Kernel:
+	Security
+	Memory & Process Menagement
+	File & Network I/O
+	Device Drivers
+	+ Power Management
+	+ Android Shared Memory
+	+ Low Memory Killer
+	+ Interprocess Communication
+	
+2. Libraries
+	System C library - Bionic libc
+	Surface Mgr. - Display Menagement
+	Media Framework - Audio/Video
+	Webkit - Browser Engine
+	OpenGl - Graphics Engines
+	SQLite - Relational Database Engine
+		+ Android Runtime(Writing and Running Android applications):
+			Core Java libraries
+			Dalvik Virtual Machine - Designed for Resource-constrained Environments : Slower CPU, Less RAM, Limited Battery Life
+
+4. Application Framework		
+	 Package Manager - DB that keeps track of app packages on device (One app can use another)
+	 Window Manager - manages all windows that comprising an app (Main Window, Sub-window, Notification Bar )
+	 View System  - Provides common UI elements (Icons, Text Entry box, Buttons, Tabs)
+	 Resource Manager - non-compiled resources (strings-language, graphics, layout files)
+	 Activity Manager - Manages app Lifecycle and Navigation Stack / manages an application's lifecycle
+	 ContentProvider - DB that allows applications to Store and Share Structured Information = Inter-Application Data Sharing
+	 LocatonManager - Provides Location & Movement Information (App query the LocationManager for current location)
+	 NotificationManager - Place Notification Icons in the Status Bar when important events occur
+	 
+5. Applications	 - All are optional and can be removed !
+	Home - main screen
+	Contacts - Contacts DB
+	Phone - Dial Phone Numbers
+	Browser - view web pages
+	Email Reader - Compose & Read Email messages
+	 
+Android Tools & Debugger :
+	 - Has normal debugger
+	 Dalvik Debug Monitor Service (DDMS):
+	   1. File Explorer - Go to Android Device Monitor , DDMS , File Explorer / shows what is on the device
+	   2. Logcat - Go to Android Monitor, logcat -> provides a console window that displays log messages emitted by programs running on your device
+	   3. Traceview - Start Debug, Go to the clock(start method tracing), stop the tracing, see the method callstack -> trace the methods of the application calls
+	   4. Hierarchy view - Go to Android Device Monitor, Windows, Open perspective,Hierarchy view -> Shows the runtime organization of the UI in graphic
+	 
+Android Java Four components:
+		1. Activity - GUI to give and receive information
+		2. Service - For long running or in the back operations / music keeps playing in the background
+		3. Broadcast receiver - listen for and responds to events that happen on the device / sms is received in the background
+		4. Content provider - Allow multiple applications to store and share data
+		
+activity_main.xml - defines the app UI layout
+
+-  Defining Resources:
+	 - Strings:
+		 1. Strings
+		 2. Strings Arrays
+		 3. Plurals -> res/values/*.xml --> Accessed in other resources as: @string/string_name
+										--> Accessed in Java as: R.string.string_name
+	 - Layout files:
+		res/layout/*.xml -->  Accessed in other resources as: @layout/layout_name
+						 -->  Accessed in Java as: R.layout.layout_name
+
+		R - generated files containting resources
+		
+	- AndroidManifest.xml
+		App Name, Components, Other - Required permissions, App features, Minimum API level
+		
+	- Install 
+	  1. from eclipse/Anroid Studio
+	  2. From the cli / Terminal
+	   - Enable USB Debugging on the devide - Settings, Applications, Development, USB Debugging / hit 7 time on the Setting/"About Phone"/Build Number
+	   -  % adb install <path_to_apk>
+			adb install app\build\outputs\apk\app-debug.apk      - Install an application which is NOT on the device
+			adb install -r app\build\outputs\apk\app-debug.apk   - Install an application which IS on the device
+			adb -s emulator-5554 install -r app\build\outputs\apk\app-debug.apk  - With multiple devices (need to change to the proper emulator)
+			
+	- Port Forwarding:
+		1. telnet localhost 5556
+		2. redir add tcp:8081:8080 / redir add tcp:8080:8081
+		3. Client - 10.0.2.2 at port 8081
+		4. redir del tcp:8080 (When removing, remove the first port which is redirected)
+		Client in emulator will connect to the locahost, that is the development machine, which is aliased at 10.0.2.2 at port 8081.	
+		So now the packets will go through this direction : 
+		Client Emulator -> development machine at 10.0.2.2 : 5000  -> Server Emulator at 10.0.2.15 : 6000.
+	To read more use: https://examples.javacodegeeks.com/android/core/socket-core/android-socket-example/	
+	
+	
+	- Install apk file if more then one emulators/devices are connected
+	  1. adb devices  //list of devices and its unique ID
+	  2. adb -s "deviceIDfromlist" install path+apkName
+			
+	  
+	- How to change fontFamily of TextView in Android  
+		android:fontFamily="sans-serif"           // roboto regular
+		android:fontFamily="sans-serif-light"     // roboto light
+		android:fontFamily="sans-serif-condensed" // roboto condensed
+		android:fontFamily="sans-serif-thin"      // roboto thin (android 4.2)
+		android:fontFamily="sans-serif-medium"    // roboto medium (android 5.0)
+	in combination with: 
+		android:textStyle="normal|bold|italic"
+		this 14 variants are possible ===> http://stackoverflow.com/questions/12128331/how-to-change-fontfamily-of-textview-in-android
+
+ Everything you need to know for starting an Android Project plus some very advanced features is located at:
+	http://developer.android.com/training/
+	
+	To add a new icon for the app --> right click on "app" folder , new Image Asset
+	
+	To speed up the emulator:
+	1. Open the SDK Manager, go to Extras and install Intel x86 Emulator Accelerator (HAXM installer)
+	2. Go to ...\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager\intelhaxm-android.exe to install the Accelerator Manager
+	
+	- Difference between Google APIs (x86 System Image) and Google APIs (ARM System Image) in Android 4.4.2 ?
+	    As developer workstations are usually Intel x86 based, the ARM instruction set had to be emulated as well. 
+		This resulted in poor performance from the AVDs due mainly to the amount of translation the x86 processor was doing to also emulate the ARM instruction set.
+		At Android 4.0.3 (API 15) Intel provided their own x86 based Android system image. 
+		This could then be used to create AVDs that did not need to do ARM translation. 
+		Combined with the Intel Hardware Accelerated Execution Manager (HAXM) the x86 AVMs were up to 10 times faster than the equivalent ARM emulators.
+
+	- ADB Connection Error: Unable to create Debug Bridge: Unable to start adb server: Unable to detect adb version, adb output	
+		Replacing old platform tools fixed my problem
+		
+	- “The connection to adb is down, and a severe error has occured.”	
+		Go to Task Manager in windows7 -> processes -> selected the adb.exe -> End Process. 
+		After that I go to cmd prompt and type adb start-server. This time adb statred succefully.
+			OR 	
+		type adb kill-server (Eclipse should be closed before issuing these commands)
+		then type adb start-server
+
+	- Rendering Problems Exception raised during rendering
+		Change the android version(in Layout/Design/The small Android Robot) used to render layouts from Android Studio back to "API 23: Android 6.0".
+		http://stackoverflow.com/questions/35914565/android-studio-rendering-problems-exception-raised-during-rendering-com-androi
+		
+	- "This computer meets the requirements for HAXM, but Intel virtualization Technology (VT-x) is not turned on. HAXM cannot be installed until VT-x is enabled."	
+		Must be enabled inside the BIOS.
+		http://amiduos.com/support/knowledge-base/article/enabling-virtualization-in-lenovo-systems
+		
+	- How to change the build tools version number for all of my modules in Android Studio/Gradle?	
+		Change all  build.gradle in your modules to build with the version you would like.
+			OR 
+		Go to File / Project Structure / Modules / Properties / Compile SDK  Version and Build Tools Version
+		
+	- Failed to push selection: Read-only file system when I try to push a file:
+		Just go to C:\Documents and Settings\<adminstrator>\.android\avd , 
+		take 'properties' of your avd folder (there is a folder for each of the avd's), uncheck 'Read only' -> OK
+		This was the only thing that worked for me.
+
+	- How can I hide/show an element when a button is pressed?
+		Take the reference of the TableLayout by using findViewById(int) in the onClickListener(). 
+		Once you have the object of TableLayout, call setVisibility(View.VISIBLE)
+		
+	- Transfer socket from one activity to another:
+		You can't 'pass a Socket' from one Activity to another, but you do have other options.
+		Option 1. Create a class with a static reference to your Socket and access it that way. In your first Activity you set the Socket, which can then be accessed statically from your second Activity.
+		public class SocketHandler {
+			private static Socket socket;
+
+			public static synchronized Socket getSocket(){
+				return socket;
+			}
+
+			public static synchronized void setSocket(Socket socket){
+				SocketHandler.socket = socket;
+			}
+		}
+		You can then access it by calling SocketHandler.setSocket(socket) or SocketHandler.getSocket() from anywhere throughout your app.
+			http://stackoverflow.com/questions/23249163/transfer-socket-from-one-activity-to-another	
+		
+	- How do I return values from a previous Activity ?
+			String value;
+			Intent i = new Intent(currentActivityName.this, nextActivityName.class);
+			i.putExtras("tag", value);
+			startActivity(i);
+		 And then in the new activity, you would retrieve it like this.
+			String x = getIntent.getExtras("tag");
+			
+	- Can I use putExtra to pass multiple values:
+			You could pass a 'bundle' of extras rather than individual extras if you like, for example:-
+				Intent intent = new Intent(this, MyActivity.class);
+				Bundle extras = new Bundle();
+				extras.putString("EXTRA_USERNAME","my_username");
+				extras.putString("EXTRA_PASSWORD","my_password");
+				intent.putExtras(extras);
+				startActivity(intent);
+			Then in your Activity that your triggering, you can reference these like so:-
+				Intent intent = getIntent();
+				Bundle extras = intent.getExtras();
+				String username_string = extras.getString("EXTRA_USERNAME");
+				String password_string = extras.getString("EXTRA_PASSWORD");
+			Or (if you prefer):-
+				Bundle extras = getIntent().getExtras();
+				String username_string = extras.getString("EXTRA_USERNAME");
+				String password_string = extras.getString("EXTRA_PASSWORD");
+					http://stackoverflow.com/questions/8452526/android-can-i-use-putextra-to-pass-multiple-values
+					
+	- Attach the debugger to a running process		
+		You don't always have to restart your app to debug it. To debug an app that you're already running:
+		Click Attach debugger to Android process.
+
+More about the Activity class: 
+	 - Activity backstack:   
+							 Activity3
+				  Activity2	 Activity2	
+		Activity1 Activity1  Activity1
+		
+	- To start a new Activity inside an Activity, an Intent object that specifies the activity you want to create has to be added.
+	  You pass this Intent object to a method:
+											startActivity()
+											startActivityForResult() --> eventually receive a callback to onActivityResult().
+											
+	- Started Activity can set its result by calling Activity.setResult() - pubic final void setResult(int resultCode)
+
+	- To Retain an Object - hard to recompile data can be cashed to speed config changes:
+		onRetainNonConfigurationInstance() to Build & Return Configuration Object called b/n onStop() and onDestroy()
+		getLastNonConfigurationInstance() during onCreate() to recover retained object
+              OR
+	   Manual Reconfiguration in AndroidManifest.xml:
+		<activity android:name-".MyActivity" android:configChanges="orientation|screensoze|keyboardHidden"...>
+		
+	- How can I maximize the editor pane?	
+		The closest thing would be to hide all tool windows by invoking the Hide All Tool Windows action. 
+		The shortcut for that is Ctrl + Shift + F12 (Default keymap).
+		
+	- How can I disable the android emulator keyboard from popping up ?	
+		Go to the settings within the emulator:
+		settings -> language and keyboard and uncheck "Android keyboard" and the other odd ones if they are checked too
+		('menu -> settings -> language & keyboard')
+
+	- How to put a border around an android TextView ?
+		You can set a shape drawable (a rectangle) as background for the view.
+			<TextView android:text="Some text" android:background="@drawable/back"/>
+		And rectangle drawable back.xml (put into res/drawable folder):
+			<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+			   <solid android:color="#ffffff" />
+			   <stroke android:width="1dip" android:color="#4fa5d5"/>
+			</shape>
+		You can use #00000000 for the solid color to have a transparent background. 
+		You can also use padding to separate the text from the border. for more information see:
+			http://developer.android.com/guide/topics/resources/drawable-resource.html
+			http://stackoverflow.com/questions/3496269/how-to-put-a-border-around-an-android-textview
+			
+	- How to reduce EditText Hint size?
+		android:textSize="16sp"
+	
+
+More about Intent Class:
+ - IntentFilters
+	  <activity ...>
+		<intent-filter...>
+		  ...
+			<action android:name="actionname" />
+		  ...
+		</intent-filter>
+	   ...
+	  </activity>   
+	Can add data to the IntentFilter in a <intent-filter...> 
+											<data .... 
+											 android:mimeType="string"
+											 android:schema="string"
+											 ....
+											/> 
+										  </intent-filter>
+										  
+Permissions:
+ - Must be added inside the AndroidManifest.xml
+	<uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+	
+- <!-- Defines a custom permission -->
+    <permission
+        android:name="course.examples.permissionexample.BOOM_PERM"
+        android:description="@string/boom_perm_string"
+        android:label="@string/boom_permission_label_string" >
+    </permission>	
+
+ - How to align text one below the other in android?	
+	Simply use "RelevantLayout" to place your Item's to related to other's.
+	Or you can place one text view to below of other like this:
+		android:layout_below="@+id/your_another_text_view"
+		
+	
+	
+Fragment Class:
+ - Used to design UI for both tablets and phones
+ 
+User Interface Classes:
+	-View
+	
+	- activity_main.xml:
+		used to display coordinatorLayout,tabLayout,floatingActionButton,viewPager etc.
+	- content_main.xml:	
+	    used to display your stuff i.e. what you want to display to users
+		
+	- java.net.ConnectException: localhost/127.0.0.1:8080 - Connection refused:
+		  If you are referring your localhost on your system from the Android emulator then you have to use http://10.0.2.2:8080/.
+		  Because Android emulator runs inside a Virtual Machine therefore here 127.0.0.1 or localhost will be emulator's own loopback address.
+	
+	- Remove default text from edit text box Android:
+		Instead of adding "default text" to the EditText, why don't you just use the built in hint functionality?
+		<EditText android:hint="Phone Number" />
+		
+	- 	Handle Tab Navigation
+		<Button
+        android:id="@+id/button1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:nextFocusForward="@+id/editText1"
+        ... />
+    <Button
+        android:id="@+id/button2"
+        android:layout_below="@id/button1"
+        android:nextFocusForward="@+id/button1"
+        ... />
+		
+Commands:
+
+	telnet localhost port#
+	network speed edge		
+	network speed full
+	power capacity 10
+	power status not-charging
+	geo fix -77.04 38.05
+	sms send 301555555 "This is a message"
+	call port#
+	
+17. IntelliJ
+	Has real neat short-cuts together with an Eclipse one:
+		File--> Settings-->Keymap
+	
+	“Link with editor” in android studio:
+		That's "Autoscroll from Source". Go to the Settings of the project itself(the window to the left), a dropdown menu is displayed,
+		press the option.
+		http://stackoverflow.com/questions/11051692/how-to-make-scroll-from-source-feature-always-enabled
+		
+	Viewing Structure of a Source File
+		To view the file structure, do one of the following
+		- On the main menu, choose View | Tool Windows | Structure.
+		- Pres StructureTool Button
+		- Press Alt+7.
+		- Press Ctrl+F12.	
+	
+18. Oracle
+	The JDBC Driver is for a specific Database Release.
+	! Had problem connection to a DB with Oracle 12, by using driver for Oracle 11.
+		http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html - for 11
+		http://www.oracle.com/technetwork/database/features/jdbc/default-2280470.html - for 12
+	
+	Cannot create PoolableConnectionFactory (Io exception: The Network Adapter could not establish the connection)	?
+	Solution:
+		I had to go look for ojdbc compatible with version on oracle that was installed this fixed my problem, my bad was thinking one ojdbc would work for all
+		
+	Checking Your Current Release Number:
+		- inside the server:
+			lsnrctl status 
+		- in the DB(with sqlDeveloper or other)
+			SELECT * FROM PRODUCT_COMPONENT_VERSION; 
+			
+			
+19. Git
+	! Even though you are interacting with a remote repository everything is still happening locally ! 
+	! Have to manually retrieve and push changes to the remote repository !
+	git init - initialise a new repository 
+	git status - check weather there are any changed or new files
+	1. git add fileName - for staging the new changes
+	2. git add . - stage everything
+	3. git add *.java - stage by pattern
+	4. touch .gitignore / write file names or pattern inside the file / 
+	git rm - for removing staged changes
+	1. git commit - for committing to the repository / I - to insert a message / Esc - to exict insert mode / :wq - rewrite the current file and git will finish commit
+	2. git commit -m 'Change message'
+   !3. git commit -a -m 'Change message' - automatic staging of only OLD file !!! New files still need to added manually !!!
+	git log - commit history
+	git branch NameOfBranch 
+	git checkout NameOfBranch / git checkout master
+	in master / git merge NameOfBranch / if there a conflicts they have to be fixed manually OR install WinMerger (or other) and configure git to use it with ---> git mergetool
+	git stash - stashes the changes you made on one branch so they don't show and you can use them later (that way they are ignored and you do a merge) / used after diff b/n branches and git status
+	git stash apply - to continue your work
+	git remote -v (origin is an alias for the repo that was cloned so can be used in commands instead of the URL)
+	git clone URL
+	git fetch origin - gets any changes from the server since you last cloned or fetched (may have to merge manually if there are conflicts)
+	git pull origin - automatically fetches and merges all the changes from the remote branch to your current branch
+	git commit -a -m 'changes' 
+	git push origin master - to push your changes to the remote repository known as origin, and commit them to the master branch / need to give credentials
+	git remote add MyRepo URL - to add remote repository
+	git clean -f -n -> Show what will be deleted with the -n option
+	git clean -f -> Then - beware: this will delete files - run (For more: http://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-my-current-git-branch)
+	git reset --hard HEAD  --> Remove changes back to head
+	git checkout fileName --> Change the state of the working copy if not indexed
+	git revert -n <sha1>  +++ git reset B ++++ git commit --> revert a committed file
+	git reset fileName --> If indexed / For more: http://stackoverflow.com/questions/933329/git-undo-changes-in-some-files
+	git diff -- myfile.txt -->  If you want to see what you haven't git added yet
+	git diff --cached -- myfile.txt --> if you want to see already-added changes
+	
+	-------Tricks----------
+	- Change the URI (URL) for a remote Git repository: 
+		git remote set-url origin git://new.url.here
+		(see git help remote) or you can just edit .git/config and change the URLs there.
+	
+	- Remove directory from git and local
+	You could checkout 'master' with both directories;
+		git rm -r one-of-the-directories
+		git commit -m "Remove duplicated directory"
+		git push origin master	
+	Remove directory from git but NOT local
+	As mentioned in the comments, what you usually want to do is remove this directory from git but not delete it entirely from the filesystem (local)
+		git rm -r --cached myFolder
+	
+	
+	- How to cd to a directory with a name containing spaces in bash?
+		1. tab button after pressing the first few characters (this will then "fill in" the rest of the folder for you
+		2. put a \ backslash before the space. eg cd ~/Library/Application\ Support
+	
+	
+20. AT
+   AT commands are used to control MODEMs. 
+   AT is the abbreviation for Attention. 
+   These commands come from Hayes commands that were used by the Hayes smart modems.	
+   
+21. C++ vs Java
+
+		type of language					function oriented								object oriented
+
+		array declarations					int *a = malloc(N * sizeof(*a));				int[] a = new int[N];  
+
+		array size							arrays don't know their own size				a.length
+
+		strings								'\0'-terminated character array					built-in immutable String data type   
+
+		accessing a library function		#include "math.h"
+											x = sqrt(2.2); 
+											all function and variables names are global
+											
+		memory address			 			pointer											reference									
+
+		manipulating pointers				*, &, +											no direct manipulation permitted
+
+		pass-by-value						primitive data types, structs, 					all primitive data types and references 
+											and pointers are passed by value; 				which includes arrays), are passed by value
+											array decays to pointer	
+											
+		defining a data structure			struct											class - key difference is language support 
+																							for defining methods to manipulate data		
+
+		accessing a data structure			a.numerator for elements						a.numerator for instance variables,
+																							c = a.plus(b) for methods
+
+		pointer chasing						x->left->right									x.left.right
+
+		allocating memory					malloc											new		
+
+		de-allocating memory				free											automatic garbage collection				
+
+		memory allocation of 				heap, stack, data, or bss						heap
+		data structures and arrays
+
+		buffer overflow						segmentation fault, core dump, 					checked run-time error exception
+											unpredicatable program
+											
+		declaring constants					const and #define								final		
+
+		variable auto-initialization		not guaranteed									instance variables (and array elements) 
+																							initialized to 0, null, or false, 
+																							compile-time error to access uninitialized 
+																							variables	
+
+		data hiding							opaque pointers and static						private				
+
+		interface method					non-static function								public method		
+
+		data type for generic item			void *											Object		
+
+		casting								anything goes									checked exception at run-time or compile-time
+
+		demotions							automatic, but might lose precision				must explicitly cast, e.g., 
+																							to convert from long to int						
+
+		polymorphism						union											inheritence		
+
+		overloading							no												yes for methods, no for operators
+
+		graphics							use external libraries							Java library support, use our standard 
+																							drawing library					
+
+		null								NULL											null	
+
+		enumeration							enum											typesafe enum			
+
+		preprocessor						yes												no					
+
+		variable declaration				at beginning of a block							before you use it	
+
+		variable naming conventions			sum_of_squares									sumOfSquares				
+
+		file naming conventions				stack.c, stack.h								Stack.java - file name matches name of class
+
+		callbacks							pointers to global functions					use interfaces for commmand dispatching		
+
+		variable number of arguments		varargs											String ...			
+
+		assertions							assert											assert		
+
+		exit and return value to OS			exit(1)											System.exit(1)
+
+		-----------------Tips:------------------
+		1. Subroutine -  sequence of program instructions that perform a specific task, packaged as a unit.
+						 This unit can then be used in programs wherever that particular task should be performed.
+
+				 
+22. Design Patterns
+
+		- MVC Pattern - used for implementing User Interfaces by dividing an application into three interconnected parts.
+			The idea is to separate internal representation of information(Model or data),
+			from the ways that the information is presented(View or presentation) to or accepted from the user(Controller).
+				Used for GUIs and Web applications.
+			Components:
+				1. Model - directly manages the data, logic and rules of the application.
+				 Stores data that is received according to commands from the Controller and displayed in the View.
+				2. View - output presentation of information, such as chart or diagram.
+					Generates an output presentation to the user based on changes in the model.
+					Multiple View of the same information are possible, such as a bar chart for management and a tabular View for accountants.
+				3. Controller - Accepts input and converts it to commands for the Model or View.
+					A controller can send commands to the model to update the model's state (e.g. editing a document). 
+					It can also send commands to its associated view to change the view's presentation of the model (e.g. by scrolling through a document).
+									
+							     _______
+							    | Model |
+							    |______ |	
+							|				 |	
+						  updates		  manipulates
+							|				 |
+							v				 v
+						  ______		  ____________	
+						 | View	|		 | Controller |
+						 |______| 		 |____________|
+						    |			 	 |
+						   sees			    uses
+						    |				 |	
+							 \ 				/
+							  \			   /
+							   \		  /
+							    |		 |  
+								v		 v
+								   User
+								   
+	View Component		 - JSP pages (JSPs embed Java code in HTML)
+	Model Component 	 - JavaBeans or a framework such as Apache Struts
+	Controller Component - Servlet/Filter (Servlets typically embed HTML inside Java code)          
+	
+		This is called "The JSP Model 2 architecture"		
+		JSPs are usually used to deliver HTML and XML documents, but through the use of OutputStream, they can deliver other types of data as well.
+		See more in:  https://en.wikipedia.org/wiki/JavaServer_Pages#cite_note-4
+	
+	 - JavaBeans are classes that encapsulate many objects into a single object (the bean). 
+	   They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods. 
+	   The name "Bean" was given to encompass this standard, which aims to create reusable software components for Java.
+	
+	 - Web container - (also known as a Servlet container) is the component of a web server that interacts with Java servlets. 
+		A web container is responsible for managing the lifecycle of servlets, mapping a URL to a particular servlet and ensuring 
+		that the URL requester has the correct access rights.
+		It handles requests to servlets, JavaServer Pages (JSP) files, and other types of files that include server-side code.
+		The Web container creates servlet instances, loads and unloads servlets, creates and manages request and response objects, 
+		and performs other servlet management tasks.
+		A web container implements the web component contract of the Java EE architecture, specifying a runtime environment for web components 
+		that includes security, concurrency, lifecycle management, transaction, deployment, and other services.
+	  
+	  - Serialization (marshalling) - in the context of data storage, serialization is the process of translating data structures or object state into a format
+		 that can be stored (for example, in a file or memory buffer, or transmitted across a network connection link) 
+		 and reconstructed later in the same or another computer environment. 
+		 
+	  - Hibernate ORM - is an object-relational mapping framework for the Java language. 
+	     It provides a framework for mapping an object-oriented domain model to a relational database. 
+		 Hibernate solves object-relational impedance mismatch problems by replacing direct, persistent database accesses 
+		 with high-level object handling functions.
+		 It's primary feature is mapping from Java classes to database tables; and mapping from Java data types to SQL data types.
+		 Hibernate also provides data query and retrieval facilities. It generates SQL calls and relieves the developer from manual handling 
+		 and object conversion of the result set.
+		
+23. UML 
+
+
+				ClassName
+		   -----------------------------------------	
+			vis attribute : type
+		   -----------------------------------------	
+			vis operation(arg list) : return type
+		   -----------------------------------------	
+			
+	where:
+	  - vis = visibility (+ for public, - for private)
+	  - attribute = data member (aka field)
+	  - operation = method (or constructor)
+	Note:
+
+	  - The arg list is a list of parameter types (e.g., int, double, String); parameter names are not included in the UML class diagram
+	  - Methods that don't return a value (i.e. void methods) should give a return type of void
+	  - Class (i.e. static) methods and fields are indicated by underlining
+	  - Constant (i.e. final) fields are indicated via naming convention: constants should be in ALL_CAPS
+	
+  -Example:
+
+	Employee
+-------------------------------------------------------------------------------------------------------------|	
+|	-name:String    		  	--> private String name;													 |
+|	-payRate:double  		  	--> private double payRate;													 |
+|	-EMPLOYEE_ID:int 		  	--> private final int EMPLOYEE_ID;											 |
+|																											 |
+|	-nextID:int      		  	--> private static int nextID;												 |
+|	___________      		  	--> meaning is static														 |
+|																											 |
+|	+STARTING_PAY_RATE:double 	--> public static final double STARTING_PAY_RATE;							 |
+|	_________________________ 																				 |
+-------------------------------------------------------------------------------------------------------------|
+|	+Employee(String)  		 	---> public Employee(String name)											 |
+|	+Employee(String, double)	---> public Employee(String name, double payRate){}							 |
+|	+getName():String  		 	---> pubic String getName() { return name;}									 |
+|	+getEmployeeID():int   	 	---> public int getEmployeeID() {return EMPLOYEE_ID;}						 |
+|	+getPayRate():double     	---> public double getPayRate() {return payRate;}							 |
+|	+changeName(String):void 	---> pubic void changeName(String newName) {name = newName;}				 |
+|	+changePayRate(double):void ---> public void changePayRate(double newPayRate) {payRate = newPayRate;}	 |
+|	+getNextID():int			---> pubic int getNextID() { int id= nextID; nextID++; return id;}			 |
+|	________________																						 |
+|--------------------------------------------------------------------------------------------------------------
+
+    RequestEnvironment
+	-THREAD_LOCAL_STORE
+	
+	
+24. Cars
+
+	 - Meaning of 1.2L, 1.4L, 1.6L, etc. in a car engine ?
+	   Short answer it is displacement volume of the engine. It means 1.2 Litres of volume.
+	   It refers to the combined volume capacity of all the cylinders( expressed in cubic centimetres, 1L=1000 cc).
+	   Here volume capacity refers to the swept volume or displacement volume or breathing capacity of the cylinder.
+	   It is basically the volume of air that can be sucked inside the cylinder as the stroke moves from TDC to BDC.
+	   Usually, higher swept volume means higher power and subsequently higher fuel consumption. 
+	   This is because Power, P= Mean Cyl.Pressure*Stroke*Piston area*No. of power strokes*No. of cylinders.
+	   So, Power generated is a directly proportional to the cylinder capacity.
+	   However, now with different fuel efficiency techniques it needn't be that the higher capacity engine 
+	   consumes more fuel than the lower capacity one.
+	   
+	
+	
+	
+	
+	
